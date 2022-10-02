@@ -13,7 +13,7 @@
 // Pair 2: Krejcikova and Siniakova
 //       *****
 
-/enum{KServeFrom7, KServeFrom8, SServeFrom7, SServeFrom8, MServeFrom1, MServeFrom2, TServeFrom1, TServeFrom2}; //Starting serves
+//enum{KServeFrom7, KServeFrom8, SServeFrom7, SServeFrom8, MServeFrom1, MServeFrom2, TServeFrom1, TServeFrom2}; //Starting serves
 enum{KServe, SServe, MServe, TServe}; //Starting serves
 enum{MT, KS, na}; //Team names
 
