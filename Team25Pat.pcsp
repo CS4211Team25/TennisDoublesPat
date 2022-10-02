@@ -1,4 +1,4 @@
-﻿// Pair 1: McNally and Townsend
+// Pair 1: McNally and Townsend
 //
 // ------+------
 // |  1  |  2  |
@@ -13,7 +13,7 @@
 // Pair 2: Krejcikova and Siniakova
 //       *****
 
-enum{KServeFrom7, KServeFrom8, SServeFrom7, SServeFrom8, MServeFrom1, MServeFrom2, TServeFrom1, TServeFrom2}; //Starting serves
+//enum{KServeFrom7, KServeFrom8, SServeFrom7, SServeFrom8, MServeFrom1, MServeFrom2, TServeFrom1, TServeFrom2}; //Starting serves
 enum{KServe, SServe, MServe, TServe}; //Starting serves
 enum{MT, KS, na}; //Team names
 
@@ -69,6 +69,27 @@ MServeReturnFrom1 = pcase {
       		5: BHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
       		                                                        else { turn = (turn+1)%4} }-> NextPt
             10: NormalReturn_DidNotReturn{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
+      		                                                        else { turn = (turn+1)%4} }-> NextPt
+};
+
+MTNormalReturnFrom1 = pcase {
+			8: MReturnFrom1 -> MReturnFrom1
+			10: TReturnFrom1 -> TReturnFrom1
+			2: DidNotReturn{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
+      		                                                        else { turn = (turn+1)%4} }-> NextPt
+
+MNormalReturnFrom1 = pcase {                              
+			5: BH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
+			10: BH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
+			15: BH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
+			20: BH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
+			1: FH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
+			4: FH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
+			8: FH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
+			13: FH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
+			3: FHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
+      		                                                        else { turn = (turn+1)%4} }-> NextPt
+      		4: BHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
       		                                                        else { turn = (turn+1)%4} }-> NextPt
 };
 			
