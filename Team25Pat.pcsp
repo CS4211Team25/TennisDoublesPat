@@ -87,7 +87,7 @@ S_SecondServeFrom8 = pcase {
 KS_ServeReturnFrom7 = pcase {                              
 			0: KServeReturn -> K_ServeReturnFrom7
 			34: SServeReturn -> S_ServeReturnFrom7
-			6: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			7: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_ServeReturnFrom8 = pcase {                              
@@ -162,25 +162,25 @@ S_ServeReturnFrom8 = pcase {
 KS_NormalReturnFrom5 = pcase {                              
 			4: KNormalReturn -> K_NormalReturnFrom5
 			28: SNormalReturn -> S_NormalReturnFrom5
-			3: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			10: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_NormalReturnFrom6 = pcase {                              
 			21: KNormalReturn -> K_NormalReturnFrom6
 			10: SNormalReturn -> S_NormalReturnFrom6
-			6: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			15: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_NormalReturnFrom7 = pcase {                              
 			12: KNormalReturn -> K_NormalReturnFrom7
 			35: SNormalReturn -> S_NormalReturnFrom7
-			10: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			16: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_NormalReturnFrom8 = pcase {                              
 			73: KNormalReturn -> K_NormalReturnFrom8
 			14: SNormalReturn -> S_NormalReturnFrom8
-			19: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			23: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 K_NormalReturnFrom5 = pcase {
@@ -370,7 +370,7 @@ MT_ServeReturnFrom1 = pcase {
 MT_ServeReturnFrom2 = pcase {                              
 			40: MServeReturn -> M_ServeReturnFrom2
 			0: TServeReturn -> T_ServeReturnFrom2
-			4: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} else { turn = (turn+1)%4} } -> NextPt
+			5: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} else { turn = (turn+1)%4} } -> NextPt
 };
 
 M_ServeReturnFrom1 = pcase {                              
@@ -437,28 +437,28 @@ T_ServeReturnFrom2 = pcase {
 MT_NormalReturnFrom1 = pcase {
 			13: MNormalReturn -> M_NormalReturnFrom1
 			24: TNormalReturn -> T_NormalReturnFrom1
-			6: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
+			14: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
       		                                                        else { turn = (turn+1)%4} }-> NextPt
 };
 
 MT_NormalReturnFrom2 = pcase {
 			31: MNormalReturn -> M_NormalReturnFrom2
 			8: TNormalReturn -> T_NormalReturnFrom2
-			9: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
+			16: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
       		                                                        else { turn = (turn+1)%4} }-> NextPt
 };
 
 MT_NormalReturnFrom3 = pcase {
 			20: MNormalReturn -> M_NormalReturnFrom3
 			24: TNormalReturn -> T_NormalReturnFrom3
-			17: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS}     		                                                        
+			33: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS}     		                                                        
 																	else { turn = (turn+1)%4} }-> NextPt
 };
 
 MT_NormalReturnFrom4 = pcase {
 			41: MNormalReturn -> M_NormalReturnFrom4
 			19: TNormalReturn -> T_NormalReturnFrom4
-			9: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
+			20: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == 7) {won = KS} 
       		                                                        else { turn = (turn+1)%4} }-> NextPt
 };		
 
