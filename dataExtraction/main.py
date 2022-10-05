@@ -62,7 +62,7 @@ for state in stateList:
                    ('Backhand', '4'), \
                    ('Forehand', '9'), \
                    ('Backhand', '9')]
-
+    choices.sort()
     for choice in choices:
         print(choice, states[state][choice])
         ans += states[state][choice]
