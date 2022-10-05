@@ -26,7 +26,7 @@ for line in sys.stdin:
     hitType, player, fromPos, toPos, stroke, result = line.strip().split(",")
 
     if hitType:
-        states[(hitType, player, fromPos)][(toPos, stroke)] += 1
+        states[(hitType, player, fromPos)][(stroke, toPos)] += 1
 
 ans = 0
 
@@ -40,28 +40,29 @@ for state in stateList:
     choices = []
     if int(state[-1]) < 5:
 
-        choices = [('5', 'Forehand'), \
-                ('5', 'Backhand'), \
-                ('6', 'Forehand'), \
-                ('6', 'Backhand'), \
-                ('7', 'Forehand'), \
-                ('7', 'Backhand'), \
-                ('8', 'Forehand'), \
-                ('8', 'Backhand'), \
-                ('9', 'Forehand'), \
-                ('9', 'Backhand')]
+        choices = [('Forehand', '5'), \
+                   ('Backhand', '5'), \
+                   ('Forehand', '6'), \
+                   ('Backhand', '6'), \
+                   ('Forehand', '7'), \
+                   ('Backhand', '7'), \
+                   ('Forehand', '8'), \
+                   ('Backhand', '8'), \
+                   ('Forehand', '9'), \
+                   ('Backhand', '9')]
 
     else:
-        choices = [('1', 'Forehand'), \
-                ('1', 'Backhand'), \
-                ('2', 'Forehand'), \
-                ('2', 'Backhand'), \
-                ('3', 'Forehand'), \
-                ('3', 'Backhand'), \
-                ('4', 'Forehand'), \
-                ('4', 'Backhand'), \
-                ('9', 'Forehand'), \
-                ('9', 'Backhand')]
+        choices = [('Forehand', '1'), \
+                   ('Backhand', '1'), \
+                   ('Forehand', '2'), \
+                   ('Backhand', '2'), \
+                   ('Forehand', '3'), \
+                   ('Backhand', '3'), \
+                   ('Forehand', '4'), \
+                   ('Backhand', '4'), \
+                   ('Forehand', '9'), \
+                   ('Backhand', '9')]
+
     for choice in choices:
         print(choice, states[state][choice])
         ans += states[state][choice]
