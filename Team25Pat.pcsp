@@ -46,7 +46,7 @@ K_SecondServeFrom7 = pcase {
 };
 
 K_SecondServeFrom8 = pcase {                              
-			10: ServeToPosition2{ball = 1} -> MT_ServeReturnFrom1
+			10: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
 			1: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };		
 
@@ -68,7 +68,7 @@ S_SecondServeFrom7 = pcase {
 };
 
 S_SecondServeFrom8 = pcase {                              
-			7: ServeToPosition2{ball = 1} -> MT_ServeReturnFrom1
+			7: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
 			2: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
