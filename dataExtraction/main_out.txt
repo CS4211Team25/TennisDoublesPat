@@ -1,266 +1,433 @@
-For state: ('K', '2nd Serve', '7')
-We have the following pcases:
+For state: ('2nd Serve', 'K', '7')
+We have the following 7 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
 ('2', 'Forehand') 7
-For state: ('K', '2nd Serve', '8')
-We have the following pcases:
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
+('9', 'Forehand') 0
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'K', '8')
+We have the following 11 pcases:
 ('1', 'Forehand') 10
+('1', 'Backhand') 0
+('2', 'Forehand') 0
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
 ('9', 'Forehand') 1
-For state: ('K', 'Normal Return', '5')
-We have the following pcases:
-('2', 'Forehand') 1
-('3', 'Forehand') 1
-('4', 'Forehand') 1
-('9', 'Backhand') 1
-For state: ('K', 'Normal Return', '6')
-We have the following pcases:
-('2', 'Backhand') 3
-('2', 'Forehand') 2
-('3', 'Backhand') 5
-('3', 'Forehand') 5
-('4', 'Backhand') 5
-('4', 'Forehand') 2
-('9', 'Backhand') 1
-('9', 'Forehand') 2
-For state: ('K', 'Normal Return', '7')
-We have the following pcases:
-('1', 'Backhand') 2
-('1', 'Forehand') 1
-('2', 'Backhand') 2
-('2', 'Forehand') 1
-('3', 'Backhand') 1
-('3', 'Forehand') 2
-('4', 'Backhand') 1
-('4', 'Forehand') 2
-('9', 'Forehand') 3
-For state: ('K', 'Normal Return', '8')
-We have the following pcases:
-('1', 'Backhand') 2
-('1', 'Forehand') 12
-('2', 'Backhand') 4
-('2', 'Forehand') 12
-('3', 'Backhand') 5
-('3', 'Forehand') 13
-('4', 'Backhand') 10
-('4', 'Forehand') 15
-('9', 'Backhand') 5
-('9', 'Forehand') 10
-For state: ('K', 'Serve', '7')
-We have the following pcases:
-('2', 'Forehand') 20
-('9', 'Forehand') 7
-For state: ('K', 'Serve', '8')
-We have the following pcases:
-('1', 'Forehand') 17
-('9', 'Forehand') 11
-For state: ('K', 'Serve Return', '8')
-We have the following pcases:
-('1', 'Backhand') 4
-('1', 'Forehand') 8
-('2', 'Forehand') 4
-('3', 'Backhand') 4
-('3', 'Forehand') 1
-('4', 'Backhand') 4
-('4', 'Forehand') 9
-('9', 'Backhand') 7
-('9', 'Forehand') 5
-For state: ('M', '2nd Serve', '1')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'M', '1')
+We have the following 8 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 0
+('7', 'Backhand') 0
 ('8', 'Forehand') 6
+('8', 'Backhand') 0
 ('9', 'Forehand') 2
-For state: ('M', '2nd Serve', '2')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'M', '2')
+We have the following 7 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
 ('7', 'Forehand') 6
+('7', 'Backhand') 0
+('8', 'Forehand') 0
+('8', 'Backhand') 0
 ('9', 'Forehand') 1
-For state: ('M', 'Normal Return', '1')
-We have the following pcases:
-('5', 'Forehand') 3
-('7', 'Forehand') 3
-('8', 'Forehand') 7
-('9', 'Forehand') 1
-For state: ('M', 'Normal Return', '2')
-We have the following pcases:
-('5', 'Backhand') 1
-('6', 'Backhand') 3
-('6', 'Forehand') 4
-('7', 'Backhand') 4
-('7', 'Forehand') 1
-('8', 'Backhand') 4
-('8', 'Forehand') 14
-('9', 'Backhand') 3
-('9', 'Forehand') 2
-For state: ('M', 'Normal Return', '3')
-We have the following pcases:
-('5', 'Forehand') 3
-('6', 'Forehand') 4
-('7', 'Backhand') 1
-('7', 'Forehand') 3
-('8', 'Backhand') 1
-('8', 'Forehand') 8
-('9', 'Forehand') 4
-For state: ('M', 'Normal Return', '4')
-We have the following pcases:
-('5', 'Backhand') 4
-('5', 'Forehand') 4
-('6', 'Backhand') 2
-('6', 'Forehand') 2
-('7', 'Backhand') 9
-('7', 'Forehand') 7
-('8', 'Backhand') 7
-('8', 'Forehand') 6
-('9', 'Backhand') 7
-For state: ('M', 'Serve', '1')
-We have the following pcases:
-('8', 'Forehand') 18
-('9', 'Forehand') 8
-For state: ('M', 'Serve', '2')
-We have the following pcases:
-('7', 'Forehand') 16
-('9', 'Forehand') 7
-For state: ('M', 'Serve Return', '2')
-We have the following pcases:
-('5', 'Backhand') 1
-('5', 'Forehand') 4
-('6', 'Backhand') 11
-('6', 'Forehand') 6
-('7', 'Backhand') 7
-('7', 'Forehand') 2
-('8', 'Backhand') 2
-('8', 'Forehand') 7
-('9', 'Backhand') 2
-('9', 'Forehand') 2
-For state: ('S', '2nd Serve', '7')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'S', '7')
+We have the following 9 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
 ('2', 'Forehand') 7
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
 ('9', 'Forehand') 2
-For state: ('S', '2nd Serve', '8')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'S', '8')
+We have the following 9 pcases:
 ('1', 'Forehand') 7
+('1', 'Backhand') 0
+('2', 'Forehand') 0
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
 ('9', 'Forehand') 2
-For state: ('S', 'Normal Return', '5')
-We have the following pcases:
-('1', 'Backhand') 4
-('1', 'Forehand') 5
-('2', 'Backhand') 2
-('2', 'Forehand') 2
-('3', 'Backhand') 4
-('3', 'Forehand') 3
-('4', 'Backhand') 3
-('4', 'Forehand') 3
-('9', 'Backhand') 1
-('9', 'Forehand') 1
-For state: ('S', 'Normal Return', '6')
-We have the following pcases:
-('1', 'Backhand') 1
-('1', 'Forehand') 1
-('2', 'Forehand') 1
-('3', 'Backhand') 1
-('3', 'Forehand') 2
-('4', 'Forehand') 4
-('9', 'Backhand') 1
-('9', 'Forehand') 2
-For state: ('S', 'Normal Return', '7')
-We have the following pcases:
-('1', 'Backhand') 3
-('1', 'Forehand') 2
-('2', 'Backhand') 6
-('2', 'Forehand') 2
-('3', 'Backhand') 8
-('3', 'Forehand') 5
-('4', 'Backhand') 7
-('4', 'Forehand') 2
-('9', 'Backhand') 5
-('9', 'Forehand') 2
-For state: ('S', 'Normal Return', '8')
-We have the following pcases:
-('1', 'Forehand') 3
-('3', 'Backhand') 2
-('3', 'Forehand') 3
-('4', 'Backhand') 2
-('4', 'Forehand') 4
-('9', 'Backhand') 1
-('9', 'Forehand') 3
-For state: ('S', 'Serve', '7')
-We have the following pcases:
-('2', 'Forehand') 11
-('9', 'Forehand') 9
-For state: ('S', 'Serve', '8')
-We have the following pcases:
-('1', 'Forehand') 11
-('9', 'Forehand') 9
-For state: ('S', 'Serve Return', '7')
-We have the following pcases:
-('1', 'Forehand') 3
-('2', 'Backhand') 3
-('2', 'Forehand') 10
-('3', 'Backhand') 5
-('3', 'Forehand') 7
-('4', 'Backhand') 3
-('4', 'Forehand') 3
-('9', 'Backhand') 1
-('9', 'Forehand') 5
-For state: ('T', '2nd Serve', '1')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'T', '1')
+We have the following 6 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 0
+('7', 'Backhand') 0
 ('8', 'Forehand') 6
-For state: ('T', '2nd Serve', '2')
-We have the following pcases:
+('8', 'Backhand') 0
+('9', 'Forehand') 0
+('9', 'Backhand') 0
+For state: ('2nd Serve', 'T', '2')
+We have the following 7 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
 ('7', 'Forehand') 7
-For state: ('T', 'Normal Return', '1')
-We have the following pcases:
+('7', 'Backhand') 0
+('8', 'Forehand') 0
+('8', 'Backhand') 0
+('9', 'Forehand') 0
+('9', 'Backhand') 0
+For state: ('Normal Return', 'K', '5')
+We have the following 4 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
+('2', 'Forehand') 1
+('2', 'Backhand') 0
+('3', 'Forehand') 1
+('3', 'Backhand') 0
+('4', 'Forehand') 1
+('4', 'Backhand') 0
+('9', 'Forehand') 0
+('9', 'Backhand') 1
+For state: ('Normal Return', 'K', '6')
+We have the following 25 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
+('2', 'Forehand') 2
+('2', 'Backhand') 3
+('3', 'Forehand') 5
+('3', 'Backhand') 5
+('4', 'Forehand') 2
+('4', 'Backhand') 5
+('9', 'Forehand') 2
+('9', 'Backhand') 1
+For state: ('Normal Return', 'K', '7')
+We have the following 15 pcases:
+('1', 'Forehand') 1
+('1', 'Backhand') 2
+('2', 'Forehand') 1
+('2', 'Backhand') 2
+('3', 'Forehand') 2
+('3', 'Backhand') 1
+('4', 'Forehand') 2
+('4', 'Backhand') 1
+('9', 'Forehand') 3
+('9', 'Backhand') 0
+For state: ('Normal Return', 'K', '8')
+We have the following 88 pcases:
+('1', 'Forehand') 12
+('1', 'Backhand') 2
+('2', 'Forehand') 12
+('2', 'Backhand') 4
+('3', 'Forehand') 13
+('3', 'Backhand') 5
+('4', 'Forehand') 15
+('4', 'Backhand') 10
+('9', 'Forehand') 10
+('9', 'Backhand') 5
+For state: ('Normal Return', 'M', '1')
+We have the following 14 pcases:
+('5', 'Forehand') 3
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 3
+('7', 'Backhand') 0
+('8', 'Forehand') 7
+('8', 'Backhand') 0
+('9', 'Forehand') 1
+('9', 'Backhand') 0
+For state: ('Normal Return', 'M', '2')
+We have the following 36 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 1
+('6', 'Forehand') 4
+('6', 'Backhand') 3
+('7', 'Forehand') 1
+('7', 'Backhand') 4
+('8', 'Forehand') 14
+('8', 'Backhand') 4
+('9', 'Forehand') 2
+('9', 'Backhand') 3
+For state: ('Normal Return', 'M', '3')
+We have the following 24 pcases:
+('5', 'Forehand') 3
+('5', 'Backhand') 0
+('6', 'Forehand') 4
+('6', 'Backhand') 0
+('7', 'Forehand') 3
+('7', 'Backhand') 1
+('8', 'Forehand') 8
+('8', 'Backhand') 1
+('9', 'Forehand') 4
+('9', 'Backhand') 0
+For state: ('Normal Return', 'M', '4')
+We have the following 48 pcases:
+('5', 'Forehand') 4
+('5', 'Backhand') 4
+('6', 'Forehand') 2
+('6', 'Backhand') 2
+('7', 'Forehand') 7
+('7', 'Backhand') 9
+('8', 'Forehand') 6
+('8', 'Backhand') 7
+('9', 'Forehand') 0
+('9', 'Backhand') 7
+For state: ('Normal Return', 'S', '5')
+We have the following 28 pcases:
+('1', 'Forehand') 5
+('1', 'Backhand') 4
+('2', 'Forehand') 2
+('2', 'Backhand') 2
+('3', 'Forehand') 3
+('3', 'Backhand') 4
+('4', 'Forehand') 3
+('4', 'Backhand') 3
+('9', 'Forehand') 1
+('9', 'Backhand') 1
+For state: ('Normal Return', 'S', '6')
+We have the following 13 pcases:
+('1', 'Forehand') 1
+('1', 'Backhand') 1
+('2', 'Forehand') 1
+('2', 'Backhand') 0
+('3', 'Forehand') 2
+('3', 'Backhand') 1
+('4', 'Forehand') 4
+('4', 'Backhand') 0
+('9', 'Forehand') 2
+('9', 'Backhand') 1
+For state: ('Normal Return', 'S', '7')
+We have the following 42 pcases:
+('1', 'Forehand') 2
+('1', 'Backhand') 3
+('2', 'Forehand') 2
+('2', 'Backhand') 6
+('3', 'Forehand') 5
+('3', 'Backhand') 8
+('4', 'Forehand') 2
+('4', 'Backhand') 7
+('9', 'Forehand') 2
+('9', 'Backhand') 5
+For state: ('Normal Return', 'S', '8')
+We have the following 18 pcases:
+('1', 'Forehand') 3
+('1', 'Backhand') 0
+('2', 'Forehand') 0
+('2', 'Backhand') 0
+('3', 'Forehand') 3
+('3', 'Backhand') 2
+('4', 'Forehand') 4
+('4', 'Backhand') 2
+('9', 'Forehand') 3
+('9', 'Backhand') 1
+For state: ('Normal Return', 'T', '1')
+We have the following 29 pcases:
+('5', 'Forehand') 0
 ('5', 'Backhand') 2
 ('6', 'Forehand') 1
+('6', 'Backhand') 0
+('7', 'Forehand') 0
 ('7', 'Backhand') 2
-('8', 'Backhand') 13
 ('8', 'Forehand') 6
-('9', 'Backhand') 2
+('8', 'Backhand') 13
 ('9', 'Forehand') 3
-For state: ('T', 'Normal Return', '2')
-We have the following pcases:
+('9', 'Backhand') 2
+For state: ('Normal Return', 'T', '2')
+We have the following 12 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
 ('6', 'Backhand') 1
 ('7', 'Forehand') 6
+('7', 'Backhand') 0
 ('8', 'Forehand') 1
-('9', 'Backhand') 1
+('8', 'Backhand') 0
 ('9', 'Forehand') 3
-For state: ('T', 'Normal Return', '3')
-We have the following pcases:
+('9', 'Backhand') 1
+For state: ('Normal Return', 'T', '3')
+We have the following 37 pcases:
 ('5', 'Forehand') 1
+('5', 'Backhand') 0
+('6', 'Forehand') 3
 ('6', 'Backhand') 4
-('6', 'Forehand') 3
+('7', 'Forehand') 3
 ('7', 'Backhand') 1
-('7', 'Forehand') 3
+('8', 'Forehand') 6
 ('8', 'Backhand') 6
-('8', 'Forehand') 6
-('9', 'Backhand') 7
 ('9', 'Forehand') 6
-For state: ('T', 'Normal Return', '4')
-We have the following pcases:
+('9', 'Backhand') 7
+For state: ('Normal Return', 'T', '4')
+We have the following 21 pcases:
 ('5', 'Forehand') 4
-('6', 'Backhand') 2
+('5', 'Backhand') 0
 ('6', 'Forehand') 3
-('7', 'Backhand') 4
+('6', 'Backhand') 2
 ('7', 'Forehand') 3
-('8', 'Backhand') 1
+('7', 'Backhand') 4
 ('8', 'Forehand') 2
-('9', 'Backhand') 1
+('8', 'Backhand') 1
 ('9', 'Forehand') 1
-For state: ('T', 'Serve', '1')
-We have the following pcases:
+('9', 'Backhand') 1
+For state: ('Serve', 'K', '7')
+We have the following 27 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
+('2', 'Forehand') 20
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
+('9', 'Forehand') 7
+('9', 'Backhand') 0
+For state: ('Serve', 'K', '8')
+We have the following 28 pcases:
+('1', 'Forehand') 17
+('1', 'Backhand') 0
+('2', 'Forehand') 0
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
+('9', 'Forehand') 11
+('9', 'Backhand') 0
+For state: ('Serve', 'M', '1')
+We have the following 26 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 0
+('7', 'Backhand') 0
+('8', 'Forehand') 18
+('8', 'Backhand') 0
+('9', 'Forehand') 8
+('9', 'Backhand') 0
+For state: ('Serve', 'M', '2')
+We have the following 23 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 16
+('7', 'Backhand') 0
+('8', 'Forehand') 0
+('8', 'Backhand') 0
+('9', 'Forehand') 7
+('9', 'Backhand') 0
+For state: ('Serve', 'S', '7')
+We have the following 20 pcases:
+('1', 'Forehand') 0
+('1', 'Backhand') 0
+('2', 'Forehand') 11
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
+('9', 'Forehand') 9
+('9', 'Backhand') 0
+For state: ('Serve', 'S', '8')
+We have the following 20 pcases:
+('1', 'Forehand') 11
+('1', 'Backhand') 0
+('2', 'Forehand') 0
+('2', 'Backhand') 0
+('3', 'Forehand') 0
+('3', 'Backhand') 0
+('4', 'Forehand') 0
+('4', 'Backhand') 0
+('9', 'Forehand') 9
+('9', 'Backhand') 0
+For state: ('Serve', 'T', '1')
+We have the following 24 pcases:
+('5', 'Forehand') 0
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
+('7', 'Forehand') 0
+('7', 'Backhand') 0
 ('8', 'Forehand') 17
+('8', 'Backhand') 0
 ('9', 'Forehand') 7
-For state: ('T', 'Serve', '2')
-We have the following pcases:
+('9', 'Backhand') 0
+For state: ('Serve', 'T', '2')
+We have the following 20 pcases:
 ('5', 'Forehand') 1
+('5', 'Backhand') 0
+('6', 'Forehand') 0
+('6', 'Backhand') 0
 ('7', 'Forehand') 12
+('7', 'Backhand') 0
+('8', 'Forehand') 0
+('8', 'Backhand') 0
 ('9', 'Forehand') 7
-For state: ('T', 'Serve Return', '1')
-We have the following pcases:
-('5', 'Backhand') 3
+('9', 'Backhand') 0
+For state: ('Serve Return', 'K', '8')
+We have the following 46 pcases:
+('1', 'Forehand') 8
+('1', 'Backhand') 4
+('2', 'Forehand') 4
+('2', 'Backhand') 0
+('3', 'Forehand') 1
+('3', 'Backhand') 4
+('4', 'Forehand') 9
+('4', 'Backhand') 4
+('9', 'Forehand') 5
+('9', 'Backhand') 7
+For state: ('Serve Return', 'M', '2')
+We have the following 44 pcases:
+('5', 'Forehand') 4
+('5', 'Backhand') 1
+('6', 'Forehand') 6
+('6', 'Backhand') 11
+('7', 'Forehand') 2
+('7', 'Backhand') 7
+('8', 'Forehand') 7
+('8', 'Backhand') 2
+('9', 'Forehand') 2
+('9', 'Backhand') 2
+For state: ('Serve Return', 'S', '7')
+We have the following 40 pcases:
+('1', 'Forehand') 3
+('1', 'Backhand') 0
+('2', 'Forehand') 10
+('2', 'Backhand') 3
+('3', 'Forehand') 7
+('3', 'Backhand') 5
+('4', 'Forehand') 3
+('4', 'Backhand') 3
+('9', 'Forehand') 5
+('9', 'Backhand') 1
+For state: ('Serve Return', 'T', '1')
+We have the following 45 pcases:
 ('5', 'Forehand') 8
-('6', 'Backhand') 1
+('5', 'Backhand') 3
 ('6', 'Forehand') 1
-('7', 'Backhand') 4
+('6', 'Backhand') 1
 ('7', 'Forehand') 3
-('8', 'Backhand') 12
+('7', 'Backhand') 4
 ('8', 'Forehand') 6
-('9', 'Backhand') 4
+('8', 'Backhand') 12
 ('9', 'Forehand') 3
+('9', 'Backhand') 4
 total: 881

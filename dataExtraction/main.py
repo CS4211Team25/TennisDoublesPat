@@ -26,7 +26,7 @@ for line in sys.stdin:
     hitType, player, fromPos, toPos, stroke, result = line.strip().split(",")
 
     if hitType:
-        states[(player, hitType, fromPos)][(toPos, stroke)] += 1
+        states[(hitType, player, fromPos)][(toPos, stroke)] += 1
 
 ans = 0
 
@@ -35,9 +35,33 @@ stateList.sort()
 
 for state in stateList:
     print("For state:", state)
-    print("We have the following pcases:")
-    choices = list(states[state])
-    choices.sort()
+    print("We have the following", sum(states[state].values()), "pcases:")
+
+    choices = []
+    if int(state[-1]) < 5:
+
+        choices = [('5', 'Forehand'), \
+                ('5', 'Backhand'), \
+                ('6', 'Forehand'), \
+                ('6', 'Backhand'), \
+                ('7', 'Forehand'), \
+                ('7', 'Backhand'), \
+                ('8', 'Forehand'), \
+                ('8', 'Backhand'), \
+                ('9', 'Forehand'), \
+                ('9', 'Backhand')]
+
+    else:
+        choices = [('1', 'Forehand'), \
+                ('1', 'Backhand'), \
+                ('2', 'Forehand'), \
+                ('2', 'Backhand'), \
+                ('3', 'Forehand'), \
+                ('3', 'Backhand'), \
+                ('4', 'Forehand'), \
+                ('4', 'Backhand'), \
+                ('9', 'Forehand'), \
+                ('9', 'Backhand')]
     for choice in choices:
         print(choice, states[state][choice])
         ans += states[state][choice]
