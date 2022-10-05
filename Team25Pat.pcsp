@@ -28,7 +28,20 @@ WhoServe1st = []i:{KServe, SServe, MServe, TServe}@ TossCoin{turn = i} -> Skip;
 
 // KS - First and Second Serves
 KSServe = [won == na && turn == KServe] KTurnToServe -> K_FirstServe [] [won == na && turn == SServe] STurnToServe -> S_FirstServe;
+
 K_FirstServe = K_FirstServeFrom7 [] K_FirstServeFrom8;
+S_FirstServe = S_FirstServeFrom7 [] S_FirstServeFrom8;
+//This is an alternative method to showing that K/S will serve from position 7/8 with equal probability
+//K_FirstServe = pcase {                              
+//			1: ServeFrom7 -> K_FirstServeFrom7
+//			1: ServeFrom8 -> K_FirstServeFrom8
+//};
+//
+//S_FirstServe = pcase {                              
+//			1: ServeFrom7 -> S_FirstServeFrom7
+//			1: ServeFrom8 -> S_FirstServeFrom8
+//};
+
 
 K_FirstServeFrom7 = pcase {                              
 			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
@@ -49,8 +62,6 @@ K_SecondServeFrom8 = pcase {
 			10: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
 			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };		
-
-S_FirstServe = S_FirstServeFrom7 [] S_FirstServeFrom8;
 
 S_FirstServeFrom7 = pcase {                              
 			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
@@ -296,6 +307,16 @@ MTServe = [won == na && turn == MServe ] MTurnToServe -> M_FirstServe [] [won ==
 
 M_FirstServe = M_FirstServeFrom1 [] M_FirstServeFrom2;
 T_FirstServe = T_FirstServeFrom1 [] T_FirstServeFrom2;
+//M_FirstServe = pcase {                              
+//			1: ServeFrom1 -> M_FirstServeFrom1
+//			1: ServeFrom2 -> M_FirstServeFrom2
+//};
+//
+//T_FirstServe = pcase {                              
+//			1: ServeFrom1 -> T_FirstServeFrom1
+//			1: ServeFrom2 -> T_FirstServeFrom2
+//};
+
 
 M_FirstServeFrom1 = pcase {                              
 			22: ServeToPosition8{ball = 8} -> KS_ServeReturnFrom8
