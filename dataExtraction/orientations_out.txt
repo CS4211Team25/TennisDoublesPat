@@ -1,0 +1,92 @@
+for orientation: ('5', '8', '1', '4') and position 1
+We have the following pcases:
+M 1
+T 5
+for orientation: ('5', '8', '1', '4') and position 2
+We have the following pcases:
+M 10
+for orientation: ('5', '8', '1', '4') and position 3
+We have the following pcases:
+T 9
+for orientation: ('5', '8', '1', '4') and position 4
+We have the following pcases:
+M 7
+T 1
+for orientation: ('5', '8', '1', '4') and position 5
+We have the following pcases:
+K 4
+S 6
+for orientation: ('5', '8', '1', '4') and position 6
+We have the following pcases:
+S 9
+for orientation: ('5', '8', '1', '4') and position 7
+We have the following pcases:
+K 6
+S 2
+for orientation: ('5', '8', '1', '4') and position 8
+We have the following pcases:
+K 19
+S 14
+for orientation: ('8', '5', '1', '4') and position 1
+We have the following pcases:
+M 3
+T 20
+for orientation: ('8', '5', '1', '4') and position 2
+We have the following pcases:
+M 23
+T 3
+for orientation: ('8', '5', '1', '4') and position 3
+We have the following pcases:
+M 5
+T 26
+for orientation: ('8', '5', '1', '4') and position 4
+We have the following pcases:
+M 39
+T 4
+for orientation: ('8', '5', '1', '4') and position 5
+We have the following pcases:
+S 16
+for orientation: ('8', '5', '1', '4') and position 6
+We have the following pcases:
+K 19
+S 4
+for orientation: ('8', '5', '1', '4') and position 7
+We have the following pcases:
+K 8
+S 26
+for orientation: ('8', '5', '1', '4') and position 8
+We have the following pcases:
+K 52
+S 4
+for orientation: ('8', '5', '4', '1') and position 1
+We have the following pcases:
+M 10
+T 4
+for orientation: ('8', '5', '4', '1') and position 2
+We have the following pcases:
+M 3
+T 9
+for orientation: ('8', '5', '4', '1') and position 3
+We have the following pcases:
+K 1
+M 19
+T 2
+for orientation: ('8', '5', '4', '1') and position 4
+We have the following pcases:
+M 2
+T 16
+for orientation: ('8', '5', '4', '1') and position 5
+We have the following pcases:
+S 6
+for orientation: ('8', '5', '4', '1') and position 6
+We have the following pcases:
+K 5
+for orientation: ('8', '5', '4', '1') and position 7
+We have the following pcases:
+K 1
+S 14
+for orientation: ('8', '5', '4', '1') and position 8
+We have the following pcases:
+K 17
+Total games done: 27
+Strokes Counted: 454
