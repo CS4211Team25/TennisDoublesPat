@@ -477,16 +477,14 @@ The probability between members is 0.5
 
 for orientation: ('8', '5', '4', '1') and position 3
 We have the following pcases:
-('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
-The probability between members is 0.1
 ('M', 'Normal Return', 'Forehand', 'Error'), 1
-The probability between members is 0.1
+The probability between members is 0.11
 ('M', 'Normal Return', 'Forehand', 'Normal Return'), 6
-The probability between members is 0.6
+The probability between members is 0.67
 ('M', 'Normal Return', 'Forehand', 'Win Point'), 1
-The probability between members is 0.1
+The probability between members is 0.11
 ('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
-The probability between members is 0.1
+The probability between members is 0.11
 
 for orientation: ('8', '5', '4', '1') and position 4
 We have the following pcases:
@@ -514,8 +512,10 @@ The probability between members is 0.33
 
 for orientation: ('8', '5', '4', '1') and position 6
 We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.5
 ('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
-The probability between members is 1.0
+The probability between members is 0.5
 
 for orientation: ('8', '5', '4', '1') and position 7
 We have the following pcases:
@@ -599,11 +599,13 @@ We have the following pcases:
 for destination: ('6', '7', '1', '4') and position 1
 We have the following pcases:
 ('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
-The probability between members is 0.25
+The probability between members is 0.2
 ('K', 'Normal Return', 'Backhand', 'Win Point'), 1
-The probability between members is 0.25
+The probability between members is 0.2
 ('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
-The probability between members is 0.5
+The probability between members is 0.4
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
 
 for destination: ('6', '7', '1', '4') and position 2
 We have the following pcases:
@@ -637,11 +639,6 @@ The probability between members is 0.1
 The probability between members is 0.1
 ('S', 'Normal Return', 'Forehand', 'Win Point'), 3
 The probability between members is 0.3
-
-for destination: ('6', '7', '1', '4') and position 5
-We have the following pcases:
-('S', 'Normal Return', 'Forehand', 'Win Point'), 1
-The probability between members is 1.0
 
 for destination: ('6', '7', '1', '4') and position 6
 We have the following pcases:
