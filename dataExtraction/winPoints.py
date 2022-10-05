@@ -25,13 +25,19 @@ for line in sys.stdin:
     values = line.strip().split(",")
     hitType, player, fromPos, toPos, stroke, result = line.strip().split(",")
 
+    if player in 'MT':
+        receivers = 'KS'
+    elif player in 'KS':
+        receivers = 'MT'
+
     if hitType and result == RES_WIN:
-        numWinPoints[int(toPos)] += 1
+        numWinPoints[(receivers, hitType, int(toPos))] += 1
 
 ans = 0
 
-for pos in range(1,9):
-    print("For position:", pos, ", Num win points landed:", numWinPoints[pos])
-    ans += numWinPoints[pos]
+for key in numWinPoints:
+    count = numWinPoints[key]
+    print(key, count)
+    ans += count
 
 print("total:", ans)
