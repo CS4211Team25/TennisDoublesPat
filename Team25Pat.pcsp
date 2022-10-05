@@ -152,7 +152,8 @@ KS_NormalReturnFrom5 = pcase {
 			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
-KS_NormalReturnFrom5 = pcase {                              
+KS_NormalReturnFrom6 = pcase {                              
+
 			10: KNormalReturn -> K_NormalReturnFrom6
 			10: SNormalReturn -> S_NormalReturnFrom6
 			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
