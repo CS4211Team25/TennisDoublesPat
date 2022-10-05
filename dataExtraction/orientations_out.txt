@@ -68,7 +68,6 @@ M 3
 T 9
 for orientation: ('8', '5', '4', '1') and position 3
 We have the following pcases:
-K 1
 M 19
 T 2
 for orientation: ('8', '5', '4', '1') and position 4
@@ -80,7 +79,7 @@ We have the following pcases:
 S 6
 for orientation: ('8', '5', '4', '1') and position 6
 We have the following pcases:
-K 5
+K 6
 for orientation: ('8', '5', '4', '1') and position 7
 We have the following pcases:
 K 1

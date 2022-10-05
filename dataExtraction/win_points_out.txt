@@ -1,8 +1,8 @@
-For position: 1 , Num win points landed: 7
+For position: 1 , Num win points landed: 8
 For position: 2 , Num win points landed: 8
 For position: 3 , Num win points landed: 16
 For position: 4 , Num win points landed: 11
-For position: 5 , Num win points landed: 9
+For position: 5 , Num win points landed: 8
 For position: 6 , Num win points landed: 9
 For position: 7 , Num win points landed: 7
 For position: 8 , Num win points landed: 4
