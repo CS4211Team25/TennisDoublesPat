@@ -1,0 +1,1120 @@
+for orientation: ('5', '8', '1', '4') and position 1
+We have the following pcases:
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 1.0
+
+for orientation: ('5', '8', '1', '4') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for orientation: ('5', '8', '1', '4') and position 3
+We have the following pcases:
+('T', 'Normal Return', 'Backhand', 'Error'), 2
+The probability between members is 0.33
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.17
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.17
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.33
+
+for orientation: ('5', '8', '1', '4') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.67
+('M', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.33
+
+for orientation: ('5', '8', '1', '4') and position 5
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.5
+
+for orientation: ('5', '8', '1', '4') and position 7
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+('S', 'Normal Return', 'Backhand', 'Error'), 2
+The probability between members is 0.5
+
+for orientation: ('5', '8', '1', '4') and position 8
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.07
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.21
+('S', 'Normal Return', 'Forehand', 'Error'), 3
+The probability between members is 0.21
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 7
+The probability between members is 0.5
+
+for orientation: ('6', '7', '1', '4') and position 1
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for orientation: ('6', '7', '1', '4') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.33
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.11
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.56
+
+for orientation: ('6', '7', '1', '4') and position 3
+We have the following pcases:
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for orientation: ('6', '7', '1', '4') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.2
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.4
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+
+for orientation: ('6', '7', '1', '4') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.33
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.17
+('S', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.17
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.17
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.17
+
+for orientation: ('6', '7', '1', '4') and position 6
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.11
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.11
+('S', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.11
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.22
+('S', 'Normal Return', 'Forehand', 'Win Point'), 4
+The probability between members is 0.44
+
+for orientation: ('6', '7', '1', '4') and position 7
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Backhand', 'Win Point'), 2
+The probability between members is 0.5
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+
+for orientation: ('6', '7', '1', '4') and position 8
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 3
+The probability between members is 0.16
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.05
+('K', 'Normal Return', 'Forehand', 'Error'), 3
+The probability between members is 0.16
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 11
+The probability between members is 0.58
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.05
+
+for orientation: ('7', '6', '1', '4') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.57
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+
+for orientation: ('7', '6', '1', '4') and position 3
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.17
+('T', 'Normal Return', 'Backhand', 'Win Point'), 2
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.17
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.33
+
+for orientation: ('7', '6', '1', '4') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.11
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 5
+The probability between members is 0.56
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.33
+
+for orientation: ('7', '6', '1', '4') and position 6
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.31
+('K', 'Normal Return', 'Backhand', 'Win Point'), 4
+The probability between members is 0.31
+('K', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.08
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.08
+('K', 'Normal Return', 'Forehand', 'Win Point'), 3
+The probability between members is 0.23
+
+for orientation: ('7', '6', '1', '4') and position 7
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Error'), 2
+The probability between members is 0.12
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 13
+The probability between members is 0.81
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.06
+
+for orientation: ('7', '6', '1', '4') and position 8
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.75
+
+for orientation: ('8', '5', '1', '4') and position 1
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.05
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.05
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 10
+The probability between members is 0.48
+('T', 'Normal Return', 'Forehand', 'Error'), 3
+The probability between members is 0.14
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 6
+The probability between members is 0.29
+
+for orientation: ('8', '5', '1', '4') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Error'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+
+for orientation: ('8', '5', '1', '4') and position 3
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.2
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.07
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.07
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.07
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.2
+
+for orientation: ('8', '5', '1', '4') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 3
+The probability between members is 0.11
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.22
+('M', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.04
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 12
+The probability between members is 0.44
+('M', 'Normal Return', 'Forehand', 'Win Point'), 3
+The probability between members is 0.11
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.04
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.04
+
+for orientation: ('8', '5', '1', '4') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 5
+The probability between members is 0.36
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.07
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.36
+('S', 'Normal Return', 'Forehand', 'Win Point'), 3
+The probability between members is 0.21
+
+for orientation: ('8', '5', '1', '4') and position 6
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('K', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+
+for orientation: ('8', '5', '1', '4') and position 7
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.08
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.08
+('K', 'Normal Return', 'Forehand', 'Error'), 3
+The probability between members is 0.23
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.23
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.08
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.15
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.08
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.08
+
+for orientation: ('8', '5', '1', '4') and position 8
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 2
+The probability between members is 0.05
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 7
+The probability between members is 0.17
+('K', 'Normal Return', 'Forehand', 'Error'), 7
+The probability between members is 0.17
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 25
+The probability between members is 0.61
+
+for orientation: ('8', '5', '2', '3') and position 1
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 1.0
+
+for orientation: ('8', '5', '2', '3') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 2
+The probability between members is 0.14
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.43
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.07
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.36
+
+for orientation: ('8', '5', '2', '3') and position 3
+We have the following pcases:
+('T', 'Normal Return', 'Backhand', 'Error'), 3
+The probability between members is 0.3
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Forehand', 'Error'), 2
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.2
+
+for orientation: ('8', '5', '2', '3') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.14
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.57
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.14
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+
+for orientation: ('8', '5', '2', '3') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.5
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.5
+
+for orientation: ('8', '5', '2', '3') and position 6
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.33
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.33
+
+for orientation: ('8', '5', '2', '3') and position 7
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.4
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+
+for orientation: ('8', '5', '2', '3') and position 8
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.55
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.36
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.09
+
+for orientation: ('8', '5', '3', '2') and position 1
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.8
+
+for orientation: ('8', '5', '3', '2') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.1
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.5
+
+for orientation: ('8', '5', '3', '2') and position 3
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.17
+('M', 'Normal Return', 'Forehand', 'Error'), 3
+The probability between members is 0.25
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.33
+('M', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.17
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.08
+
+for orientation: ('8', '5', '3', '2') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.14
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.29
+('T', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.29
+
+for orientation: ('8', '5', '3', '2') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.67
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for orientation: ('8', '5', '3', '2') and position 6
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.25
+
+for orientation: ('8', '5', '3', '2') and position 7
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.18
+('S', 'Normal Return', 'Forehand', 'Error'), 2
+The probability between members is 0.18
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 7
+The probability between members is 0.64
+
+for orientation: ('8', '5', '3', '2') and position 8
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.17
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.83
+
+for orientation: ('8', '5', '4', '1') and position 1
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.11
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 8
+The probability between members is 0.89
+
+for orientation: ('8', '5', '4', '1') and position 2
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.5
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.5
+
+for orientation: ('8', '5', '4', '1') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.1
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 6
+The probability between members is 0.6
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.1
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+
+for orientation: ('8', '5', '4', '1') and position 4
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+The probability between members is 0.09
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.27
+('T', 'Normal Return', 'Backhand', 'Win Point'), 2
+The probability between members is 0.18
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+The probability between members is 0.09
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.09
+('T', 'Normal Return', 'Forehand', 'Win Point'), 3
+The probability between members is 0.27
+
+for orientation: ('8', '5', '4', '1') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.33
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.33
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.33
+
+for orientation: ('8', '5', '4', '1') and position 6
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for orientation: ('8', '5', '4', '1') and position 7
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.5
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+
+for orientation: ('8', '5', '4', '1') and position 8
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.55
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.36
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.09
+
+for destination: ('5', '8', '1', '4') and position 1
+We have the following pcases:
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 1.0
+
+for destination: ('5', '8', '1', '4') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for destination: ('5', '8', '1', '4') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.29
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.29
+
+for destination: ('5', '8', '1', '4') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+
+for destination: ('5', '8', '1', '4') and position 5
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for destination: ('5', '8', '1', '4') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.33
+('M', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for destination: ('5', '8', '1', '4') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.17
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.67
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.17
+
+for destination: ('5', '8', '1', '4') and position 9
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 1
+('S', 'Normal Return', 'Backhand', 'Error'), 3
+('S', 'Normal Return', 'Forehand', 'Error'), 3
+('T', 'Normal Return', 'Backhand', 'Error'), 2
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+
+for destination: ('6', '7', '1', '4') and position 1
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+
+for destination: ('6', '7', '1', '4') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 7
+The probability between members is 0.78
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.22
+
+for destination: ('6', '7', '1', '4') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.4
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+
+for destination: ('6', '7', '1', '4') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.1
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.3
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.1
+('S', 'Normal Return', 'Forehand', 'Win Point'), 3
+The probability between members is 0.3
+
+for destination: ('6', '7', '1', '4') and position 5
+We have the following pcases:
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 1.0
+
+for destination: ('6', '7', '1', '4') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.5
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.5
+
+for destination: ('6', '7', '1', '4') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for destination: ('6', '7', '1', '4') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.25
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 6
+The probability between members is 0.5
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.25
+
+for destination: ('6', '7', '1', '4') and position 9
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 3
+('K', 'Normal Return', 'Forehand', 'Error'), 3
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+('S', 'Normal Return', 'Forehand', 'Error'), 2
+('T', 'Normal Return', 'Backhand', 'Error'), 2
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+
+for destination: ('7', '6', '1', '4') and position 1
+We have the following pcases:
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 1.0
+
+for destination: ('7', '6', '1', '4') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.25
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.12
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.12
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.5
+
+for destination: ('7', '6', '1', '4') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.09
+('K', 'Normal Return', 'Backhand', 'Win Point'), 3
+The probability between members is 0.27
+('K', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.18
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.36
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.09
+
+for destination: ('7', '6', '1', '4') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.1
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.1
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.6
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.2
+
+for destination: ('7', '6', '1', '4') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.43
+('T', 'Normal Return', 'Backhand', 'Win Point'), 2
+The probability between members is 0.29
+
+for destination: ('7', '6', '1', '4') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 5
+The probability between members is 0.5
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.1
+
+for destination: ('7', '6', '1', '4') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.33
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for destination: ('7', '6', '1', '4') and position 9
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Error'), 1
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+('S', 'Normal Return', 'Backhand', 'Error'), 2
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+
+for destination: ('8', '5', '1', '4') and position 1
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.06
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 7
+The probability between members is 0.39
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.22
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.06
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.17
+('S', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.11
+
+for destination: ('8', '5', '1', '4') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.33
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.17
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.17
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.33
+
+for destination: ('8', '5', '1', '4') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.08
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 8
+The probability between members is 0.62
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.08
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.08
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.08
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.08
+
+for destination: ('8', '5', '1', '4') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 6
+The probability between members is 0.26
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 12
+The probability between members is 0.52
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.04
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.13
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.04
+
+for destination: ('8', '5', '1', '4') and position 5
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.12
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.5
+('M', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.25
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.12
+
+for destination: ('8', '5', '1', '4') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.14
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.14
+('M', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.29
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.14
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.29
+
+for destination: ('8', '5', '1', '4') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.2
+('M', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.1
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 5
+The probability between members is 0.5
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.2
+
+for destination: ('8', '5', '1', '4') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.06
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 8
+The probability between members is 0.26
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 12
+The probability between members is 0.39
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 8
+The probability between members is 0.26
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.03
+
+for destination: ('8', '5', '1', '4') and position 9
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 2
+('K', 'Normal Return', 'Forehand', 'Error'), 11
+('M', 'Normal Return', 'Backhand', 'Error'), 3
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+('S', 'Normal Return', 'Forehand', 'Error'), 1
+('T', 'Normal Return', 'Backhand', 'Error'), 3
+('T', 'Normal Return', 'Forehand', 'Error'), 6
+
+for destination: ('8', '5', '2', '3') and position 1
+We have the following pcases:
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for destination: ('8', '5', '2', '3') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.38
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.38
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.12
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.12
+
+for destination: ('8', '5', '2', '3') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+
+for destination: ('8', '5', '2', '3') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 4
+The probability between members is 0.57
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.14
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+
+for destination: ('8', '5', '2', '3') and position 5
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.5
+('T', 'Normal Return', 'Forehand', 'Win Point'), 2
+The probability between members is 0.5
+
+for destination: ('8', '5', '2', '3') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.25
+
+for destination: ('8', '5', '2', '3') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.4
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+
+for destination: ('8', '5', '2', '3') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 5
+The probability between members is 0.45
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 6
+The probability between members is 0.55
+
+for destination: ('8', '5', '2', '3') and position 9
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 3
+('M', 'Normal Return', 'Forehand', 'Error'), 1
+('S', 'Normal Return', 'Backhand', 'Error'), 1
+('T', 'Normal Return', 'Backhand', 'Error'), 3
+('T', 'Normal Return', 'Forehand', 'Error'), 2
+
+for destination: ('8', '5', '3', '2') and position 1
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.67
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for destination: ('8', '5', '3', '2') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 3
+The probability between members is 0.6
+
+for destination: ('8', '5', '3', '2') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.11
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.11
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.11
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.11
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.11
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 4
+The probability between members is 0.44
+
+for destination: ('8', '5', '3', '2') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+
+for destination: ('8', '5', '3', '2') and position 5
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.25
+
+for destination: ('8', '5', '3', '2') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.25
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.5
+
+for destination: ('8', '5', '3', '2') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.08
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.08
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.08
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.23
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 6
+The probability between members is 0.46
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.08
+
+for destination: ('8', '5', '3', '2') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.29
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.14
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.29
+
+for destination: ('8', '5', '3', '2') and position 9
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Error'), 1
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+('M', 'Normal Return', 'Forehand', 'Error'), 3
+('S', 'Normal Return', 'Forehand', 'Error'), 2
+('T', 'Normal Return', 'Backhand', 'Error'), 1
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+
+for destination: ('8', '5', '4', '1') and position 1
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 0.2
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+('S', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.2
+('S', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+
+for destination: ('8', '5', '4', '1') and position 2
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 1
+The probability between members is 1.0
+
+for destination: ('8', '5', '4', '1') and position 3
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.27
+('K', 'Normal Return', 'Backhand', 'Win Point'), 1
+The probability between members is 0.09
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.18
+('K', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.09
+('S', 'Normal Return', 'Backhand', 'Normal Return'), 3
+The probability between members is 0.27
+('S', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.09
+
+for destination: ('8', '5', '4', '1') and position 4
+We have the following pcases:
+('K', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.67
+('K', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.33
+
+for destination: ('8', '5', '4', '1') and position 5
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+('M', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Normal Return'), 1
+The probability between members is 0.2
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+
+for destination: ('8', '5', '4', '1') and position 6
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Backhand', 'Win Point'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+
+for destination: ('8', '5', '4', '1') and position 7
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.4
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.2
+
+for destination: ('8', '5', '4', '1') and position 8
+We have the following pcases:
+('M', 'Normal Return', 'Forehand', 'Normal Return'), 9
+The probability between members is 0.75
+('T', 'Normal Return', 'Backhand', 'Normal Return'), 2
+The probability between members is 0.17
+('T', 'Normal Return', 'Forehand', 'Win Point'), 1
+The probability between members is 0.08
+
+for destination: ('8', '5', '4', '1') and position 9
+We have the following pcases:
+('M', 'Normal Return', 'Backhand', 'Error'), 1
+('M', 'Normal Return', 'Forehand', 'Error'), 2
+('T', 'Normal Return', 'Forehand', 'Error'), 1
+
+Total games done: 27
+Num strokes counted: 908
