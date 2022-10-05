@@ -13,315 +13,556 @@
 // Pair 2: Krejcikova and Siniakova
 //       *****
 
-//enum{KServeFrom7, KServeFrom8, SServeFrom7, SServeFrom8, MServeFrom1, MServeFrom2, TServeFrom1, TServeFrom2}; //Starting serves
 enum{KServe, SServe, MServe, TServe}; //Starting serves
 enum{MT, KS, na}; //Team names
 
-var turn = na; //serve turn;
+var turn = na; //Serve turn;
 var MTscore = 0;
 var KSscore = 0;
 var won = na;
 var ball = 9;
 
-//TieBreakGame = WhoServe1st; (MServe [] TServe [] KServe [] SServe);
 TieBreakGame = WhoServe1st; (MTServe [] KSServe);
 
-WhoServe1st = []i:{f_de_ct,n_de_ct}@ TossCoin{turn = i} -> Skip;
-//Player1Serve = [won == na && turn == f_de_ct ]FedReady_DeCt -> De_Ply1Serve [] [won == na && turn == f_ad_ct] FedReady_AdCt -> Ad_Ply1Serve;
+WhoServe1st = []i:{KServe, SServe, MServe, TServe}@ TossCoin{turn = i} -> Skip;
 
-KSServe = [won == na && turn == KServe ]KServe -> KServe [] [won == na && turn == SServe] SServe -> SServe;
+// KS - First and Second Serves
+KSServe = [won == na && turn == KServe] KTurnToServe -> K_FirstServe [] [won == na && turn == SServe] STurnToServe -> S_FirstServe;
+K_FirstServe = K_FirstServeFrom7 [] K_FirstServeFrom8;
 
-KServe = KServeFrom7 [] KServeFrom8;
-
-KServeFrom7 = pcase {                              
-			22: ServeToPosition2{ball = 2} -> MTServeReturnFrom2
-			5: ServeError{ball = 9} -> K2ndServeFrom7};
-			
-KServeFrom8 = pcase {                              
-			22: ServeToPosition1{ball = 1} -> MTServeReturnFrom1
-			5: ServeError{ball = 9} -> K2ndServeFrom8};
-			
-SServeFrom7 = pcase {                              
-			22: ServeToPosition2{ball = 2} -> MTServeReturnFrom2
-			5: ServeError{ball = 9} -> K2ndServeFrom7};
-			
-SServeFrom8 = pcase {                              
-			22: ServeToPosition1{ball = 1} -> MTServeReturnFrom1
-			5: ServeError{ball = 9} -> K2ndServeFrom8};
-
-MTServeReturnFrom1 = MServeReturnFrom1 [] TServeReturnFrom1; //roughly 50/50 for serve returns
-MTServeReturnFrom2 = MServeReturnFrom2 [] TServeReturnFrom2;
-//MTServeReturnFrom1 = pcase {                              
-//			10: MServeReturn -> MServeReturnFrom1
-//			5: TServeReturn -> TServeReturnFrom1
-
-MServeReturnFrom1 = pcase {                              
-			22: BH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
-			22: BH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
-			22: BH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
-			22: BH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
-			22: FH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
-			22: FH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
-			22: FH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
-			22: FH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
-			5: FHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-      		5: BHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-            10: NormalReturn_DidNotReturn{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-};
-
-MTNormalReturnFrom1 = pcase {
-			8: MReturnFrom1 -> MReturnFrom1
-			10: TReturnFrom1 -> TReturnFrom1
-			2: DidNotReturn{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-
-MNormalReturnFrom1 = pcase {                              
-			5: BH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
-			10: BH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
-			15: BH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
-			20: BH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
-			1: FH_ServeReturnToPosition5{ball = 5} -> KSNormalReturnFrom5
-			4: FH_ServeReturnToPosition6{ball = 6} -> KSNormalReturnFrom6
-			8: FH_ServeReturnToPosition7{ball = 7} -> KSNormalReturnFrom7
-			13: FH_ServeReturnToPosition8{ball = 8} -> KSNormalReturnFrom8
-			3: FHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-      		4: BHServeReturnError{ball = 9} -> {KSscore++; if (KSscore == 7) {won = KS} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
+K_FirstServeFrom7 = pcase {                              
+			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+			5: ServeError{ball = 9} -> K_SecondServeFrom7
 };
 			
-			
-KSNormalReturnFrom5 = pcase {                              
-			22: NormalReturnToPosition1{ball = 1} -> MTNormalReturnFrom1
-			22: NormalReturnToPosition2{ball = 2} -> MTNormalReturnFrom2
-			22: NormalReturnToPosition3{ball = 3} -> MTNormalReturnFrom3
-			22: NormalReturnToPosition4{ball = 4} -> MTNormalReturnFrom4
-			5: NormalReturn_OutOfBounds{ball = 9} -> {MTscore++; if (MTscore == 7) {won = MT} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt
-      		10: NormalReturn_DidNotReturn{ball = 9} -> {MTscore++; if (MTscore == 7) {won = MT} 
-      		                                                        else { turn = (turn+1)%4} }-> NextPt	                                                        
+K_FirstServeFrom8 = pcase {                              
+			25: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
+			5: ServeError{ball = 9} -> K_SecondServeFrom7
 };
+
+K_SecondServeFrom7 = pcase {                              
+			11: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+K_SecondServeFrom8 = pcase {                              
+			10: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
+			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};		
+
+S_FirstServe = S_FirstServeFrom7 [] S_FirstServeFrom8;
+
+S_FirstServeFrom7 = pcase {                              
+			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+			5: ServeError{ball = 9} -> K_SecondServeFrom7
+};
+			
+S_FirstServeFrom8 = pcase {                              
+			25: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
+			5: ServeError{ball = 9} -> K_SecondServeFrom7
+};
+
+S_SecondServeFrom7 = pcase {                              
+			11: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+S_SecondServeFrom8 = pcase {                              
+			10: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
+			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+// KS - Serve Return
+KS_ServeReturnFrom7 = pcase {                              
+			10: KServeReturn -> K_ServeReturnFrom7
+			10: SServeReturn -> S_ServeReturnFrom7
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+KS_ServeReturnFrom8 = pcase {                              
+			10: KServeReturn -> K_ServeReturnFrom8
+			10: SServeReturn -> S_ServeReturnFrom8
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};		
+
+K_ServeReturnFrom7 = pcase {
+			2: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+K_ServeReturnFrom8 = pcase {
+			2: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_ServeReturnFrom7 = pcase {
+			3: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			3: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			3: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			3: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			3: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			3: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			3: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			3: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_ServeReturnFrom8 = pcase {
+			3: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			3: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			3: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			3: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			3: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			3: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			3: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			3: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+// KS - Normal Return
+KS_NormalReturnFrom5 = pcase {                              
+			10: KNormalReturn -> K_NormalReturnFrom5
+			10: SNormalReturn -> S_NormalReturnFrom5
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+KS_NormalReturnFrom6 = pcase {                              
+
+			10: KNormalReturn -> K_NormalReturnFrom6
+			10: SNormalReturn -> S_NormalReturnFrom6
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+KS_NormalReturnFrom7 = pcase {                              
+			10: KNormalReturn -> K_NormalReturnFrom7
+			10: SNormalReturn -> S_NormalReturnFrom7
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+KS_NormalReturnFrom8 = pcase {                              
+			10: KNormalReturn -> K_NormalReturnFrom8
+			10: SNormalReturn -> S_NormalReturnFrom8
+			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+};
+
+K_NormalReturnFrom5 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+K_NormalReturnFrom6 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+K_NormalReturnFrom7 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+K_NormalReturnFrom8 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_NormalReturnFrom5 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_NormalReturnFrom6 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_NormalReturnFrom7 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+S_NormalReturnFrom8 = pcase {
+			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+				-> NextPt
+};	
+
+/////////////////////////
+(For Wilfred to edit)
+/////////////////////////
+// MT - First and Second Serves
+//MTServe = [won == na && turn == MServe] MTurnToServe -> M_FirstServe [] [won == na && turn == TServe] TTurnToServe -> T_FirstServe;
+//M_FirstServe = M_FirstServeFrom7 [] M_FirstServeFrom8;
+//
+//M_FirstServeFrom7 = pcase {                              
+//			10: ServeToPosition2{ball = 2} -> KS_ServeReturnFrom2
+//			5: ServeError{ball = 9} -> M_SecondServeFrom7
+//};
+//			
+//M_FirstServeFrom8 = pcase {                              
+//			25: ServeToPosition1{ball = 1} -> KS_ServeReturnFrom1
+//			5: ServeError{ball = 9} -> M_SecondServeFrom7
+//};
+//
+//M_SecondServeFrom7 = pcase {                              
+//			11: ServeToPosition2{ball = 2} -> KS_ServeReturnFrom2
+//			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//M_SecondServeFrom8 = pcase {                              
+//			10: ServeToPosition2{ball = 2} -> KS_ServeReturnFrom1
+//			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};		
+//
+//S_FirstServe = S_FirstServeFrom7 [] S_FirstServeFrom8;
+//
+//S_FirstServeFrom7 = pcase {                              
+//			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+//			5: ServeError{ball = 9} -> K_SecondServeFrom7
+//};
+//			
+//S_FirstServeFrom8 = pcase {                              
+//			25: ServeToPosition1{ball = 1} -> MT_ServeReturnFrom1
+//			5: ServeError{ball = 9} -> K_SecondServeFrom7
+//};
+//
+//S_SecondServeFrom7 = pcase {                              
+//			11: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom2
+//			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//S_SecondServeFrom8 = pcase {                              
+//			10: ServeToPosition2{ball = 2} -> MT_ServeReturnFrom1
+//			5: ServeError{ball = 9} -> KSDoubleFault{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//// KS - Serve Return
+//KS_ServeReturnFrom7 = pcase {                              
+//			10: KServeReturn -> K_ServeReturnFrom7
+//			10: SServeReturn -> S_ServeReturnFrom7
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//KS_ServeReturnFrom8 = pcase {                              
+//			10: KServeReturn -> K_ServeReturnFrom8
+//			10: SServeReturn -> S_ServeReturnFrom8
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};		
+//
+//K_ServeReturnFrom7 = pcase {
+//			2: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//K_ServeReturnFrom8 = pcase {
+//			2: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_ServeReturnFrom7 = pcase {
+//			3: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			3: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			3: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			3: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			3: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			3: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			3: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			3: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_ServeReturnFrom8 = pcase {
+//			3: BH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			3: BH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			3: BH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			3: BH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			3: FH_ServeReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			3: FH_ServeReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			3: FH_ServeReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			3: FH_ServeReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_ServeReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//// KS - Normal Return
+//KS_NormalReturnFrom5 = pcase {                              
+//			10: KNormalReturn -> K_NormalReturnFrom5
+//			10: SNormalReturn -> S_NormalReturnFrom5
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//KS_NormalReturnFrom5 = pcase {                              
+//			10: KNormalReturn -> K_NormalReturnFrom6
+//			10: SNormalReturn -> S_NormalReturnFrom6
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//KS_NormalReturnFrom7 = pcase {                              
+//			10: KNormalReturn -> K_NormalReturnFrom7
+//			10: SNormalReturn -> S_NormalReturnFrom7
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//KS_NormalReturnFrom8 = pcase {                              
+//			10: KNormalReturn -> K_NormalReturnFrom8
+//			10: SNormalReturn -> S_NormalReturnFrom8
+//			5: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+//};
+//
+//K_NormalReturnFrom5 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//K_NormalReturnFrom6 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//K_NormalReturnFrom7 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//K_NormalReturnFrom8 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_NormalReturnFrom5 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_NormalReturnFrom6 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_NormalReturnFrom7 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+//
+//S_NormalReturnFrom8 = pcase {
+//			2: BH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: BH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: BH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: BH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4
+//			2: FH_NormalReturnToPosition1{ball = 1} -> MT_NormalReturnFrom1
+//			2: FH_NormalReturnToPosition2{ball = 2} -> MT_NormalReturnFrom2
+//			2: FH_NormalReturnToPosition3{ball = 3} -> MT_NormalReturnFrom3
+//			2: FH_NormalReturnToPosition4{ball = 4} -> MT_NormalReturnFrom4                         
+//			10: BH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//			10: FH_NormalReturn_Out{ball = 9} -> KSOut{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} }
+//				-> NextPt
+//};	
+
 		
 NextPt = KSServe [] MTServe [] ([won != na] GameOver -> Skip);
-
-
-/////////////////////////////////////////////////////////
-// (For Wilfred) Insert MT cases below
-/////////////////////////////////////////////////////////
-
-
 		
 #define KSWin won == KS;
+#define MTWin won == MT;
 #assert TieBreakGame reaches KSWin with prob;
+#assert TieBreakGame reaches MTWin with prob;
 		
-/////////////////////////////////////////////////////////
-//Code from Tennis Model Example Below
-/////////////////////////////////////////////////////////
-//De_Ply1Serve = pcase {                             
-//			20: ServeT_in{ball= 5} -> Ply2_ForeHandR  
-//			28: ServeWide_in{ball =6} -> Ply2_BackHandR 
-//			0: ServeBody_in{ball=6} -> (Ply2_BackHandR [] Ply2_ForeHandR)
-//			24: Serve_err{ball=9} -> De_Ply1Serve_2nd}; 
-//
-//De_Ply1Serve_2nd = pcase {                 //1st serve is out
-//			3: ServeT_in{ball= 5} -> Ply2_ForeHandR  
-//			13: ServeWide_in{ball =6} -> Ply2_BackHandR 
-//			5: ServeBody_in{ball=6} -> (Ply2_BackHandR [] Ply2_ForeHandR)
-//			3: Serve_err{ball=9} -> Fdoublefault{nscore++; if (nscore == 7) {won = player2} 
-//      		                                                        else { turn = (turn+1)%4} }-> NextPt
-//     		 };
-//
-//Ad_Ply1Serve = pcase {
-//			21: ServeT_in{ball= 5} -> Ply2_BackHandR  
-//			16: ServeWide_in{ball =4} -> Ply2_ForeHandR
-//			0: ServeBody_in{ball=4} -> (Ply2_BackHandR [] Ply2_ForeHandR)
-//			29: Serve_err{ball=9} -> Ad_Ply1Serve_2nd}; 
-//
-//Ad_Ply1Serve_2nd = pcase {                 //1st serve is out
-//			21: ServeT_in{ball= 5} -> Ply2_BackHandR  
-//			7: ServeWide_in{ball =4} -> Ply2_ForeHandR
-//			1: ServeBody_in{ball=4} -> (Ply2_BackHandR [] Ply2_ForeHandR)
-//			0: Serve_err{ball=9} -> Fdoublefault{nscore++; if (nscore == 7) {won = player2} 
-//      		                                                        else { turn = (turn+1)%4} }-> NextPt
-//     		 };    
-//
-//NextPt = Player1Serve [] Player2Serve [] ([won != na] GameOver -> Skip);
-//
-//// deuce stroke is when player2 hit position is 6
-//Ply2_de_stroke = pcase { // if already 
-//			43: BH_Crosscourt { ball = 1;} -> Ply1_de_stroke
-//			28: BH_Downline { ball = 3} -> Ply1_ad_stroke
-//			41: BH_DownMid { ball = 2} -> Ply1_mid_stroke
-//			7: FH_InsideIn {ball = 3} -> Ply1_ad_stroke
-//			4: FH_InsideOut { ball = 1} -> Ply1_de_stroke
-//			3: FH_DownMid { ball = 2} -> Ply1_mid_stroke
-//			34: Error { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt      		                                                            
-//	};
-//
-//// mid stroke is when player2 hit position is 5
-//Ply2_mid_stroke = noMove -> pcase{
-//			20: FH_InsideOut{ball = 1} -> Ply1_de_stroke
-//			58: FH_Crosscourt { ball = 3} -> Ply1_ad_stroke
-//			20: FH_DownMid { ball = 2 } -> Ply1_mid_stroke
-//			3: BH_InsideOut { ball = 3} -> Ply1_ad_stroke
-//			17: BH_DownMid { ball = 2} -> Ply1_mid_stroke
-//			29: BH_Crosscourt { ball = 1} -> Ply1_de_stroke
-//			15: Error { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt   
-//	};
-//	
-//
-//// ad stroke is when player 2 hit position is 4
-//Ply2_ad_stroke = pcase{
-//			60: FH_Crosscourt { ball = 3} -> Ply1_ad_stroke
-//			24: FH_Downline { ball = 1} -> Ply1_de_stroke
-//			10: FH_DownMid { ball = 2 } -> Ply1_mid_stroke
-//			0: BH_InsideOut { ball = 3} -> Ply1_ad_stroke
-//			0: BH_InsideIn { ball = 1} -> Ply1_de_stroke
-//			0: BH_DownMid { ball = 2} -> Ply1_mid_stroke
-//			53: Error { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt   	
-//	};    		                                                            
-//
-//
-//Player2Serve = [won == na && turn == n_de_ct]NadReady_DeCt -> De_Ply2Serve [] [ won == na && turn == n_ad_ct] NadReady_AdCt -> Ad_Ply2Serve;
-//
-//De_Ply2Serve = pcase {
-//			24 : ServeT_in{ball= 2} -> Ply1_BackHandR
-//			7 : ServeWide_in{ball =1} -> Ply1_ForeHandR
-//			20: ServeBody_in{ball=1} -> (Ply1_ForeHandR [] Ply1_BackHandR)
-//			26: Serve_err{ball=9} -> De_Ply2Serve_2nd}; 
-//
-//De_Ply2Serve_2nd = pcase {                 //1st serve is out
-//			11 : ServeT_in{ball= 2} -> Ply1_BackHandR
-//			7 : ServeWide_in{ball =1} -> Ply1_ForeHandR
-//			6: ServeBody_in{ball=1} -> (Ply1_ForeHandR [] Ply1_BackHandR)
-//			2 : Serve_err{ball=9} -> Ndoublefault{fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//     		 };
-//     		 
-//Ad_Ply2Serve = pcase {
-//			9: ServeT_in{ball= 2} -> Ply1_ForeHandR
-//			32 : ServeWide_in{ball =3} -> Ply1_BackHandR
-//			18: ServeBody_in{ball=3} -> (Ply1_ForeHandR [] Ply1_BackHandR)
-//			15: Serve_err{ball=9} -> Ad_Ply2Serve_2nd}; 
-//
-//Ad_Ply2Serve_2nd = pcase {                 //1st serve is out
-//			1: ServeT_in{ball= 2} -> Ply1_ForeHandR
-//			10 : ServeWide_in{ball =3} -> Ply1_BackHandR
-//			3: ServeBody_in{ball=3} -> (Ply1_ForeHandR [] Ply1_BackHandR)
-//			1: Serve_err{ball=9} -> Ndoublefault{fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//     		 };
-// 	     
-//// deuce stroke is when player1 hit position is 1
-//Ply1_de_stroke = pcase{
-//			48: FH_Crosscourt { ball = 6} -> Ply2_de_stroke
-//			19: FH_Downline { ball = 4} -> Ply2_ad_stroke
-//			22: FH_DownMid { ball = 5} -> Ply2_mid_stroke
-//			0: BH_InsideIn {ball = 4} -> Ply2_ad_stroke
-//			0: BH_InsideOut { ball = 6} -> Ply2_de_stroke
-//			0: BH_DownMid { ball = 5} -> Ply2_mid_stroke
-//			48: Error { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt      		                                                            
-//	};
-//
-//// mid stroke is when player1 hit position is 2
-//Ply1_mid_stroke = pcase{
-//			23: FH_InsideOut{ball = 4} -> Ply2_ad_stroke
-//			43: FH_Crosscourt { ball = 6} -> Ply2_de_stroke
-//			17: FH_DownMid { ball = 5 } -> Ply2_mid_stroke
-//			11: BH_InsideOut { ball = 6} -> Ply2_de_stroke
-//			15: BH_DownMid { ball = 5} -> Ply2_mid_stroke
-//			8: BH_Crosscourt { ball = 4} -> Ply2_ad_stroke
-//			20: Error { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt   
-//	};
-//
-//// ad stroke is when player1 hit position is 3
-//Ply1_ad_stroke = pcase{
-//			60: BH_Crosscourt { ball = 4} -> Ply2_ad_stroke
-//			17: BH_Downline { ball = 6} -> Ply2_de_stroke
-//			47: BH_DownMid { ball = 5 } -> Ply2_mid_stroke
-//			16: FH_InsideOut { ball = 4} -> Ply2_ad_stroke
-//			8: FH_InsideIn { ball = 6} -> Ply2_de_stroke
-//			2: FH_DownMid { ball = 5} -> Ply2_mid_stroke
-//			33: Error { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt 	
-//	};
-//
-//Ply2_BackHandR = ifa (turn == f_de_ct) {    // Player2 backhand return to Player1 serve from the deuce court side
-//		  pcase {
-//			8: BH_CrossCourt_DE {ball = 1} -> Ply1_de_stroke
-//			3: BH_DownLine { ball = 3} -> Ply1_ad_stroke
-//			15: BH_DownMid_DE { ball = 2} -> Ply1_mid_stroke
-//			19: BH_Error_DE { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }}
-//      		 else {
-//      		pcase {
-//			0: BH_InsideIn {ball = 1} -> Ply1_de_stroke
-//			3: BH_CrossCourt_AD {ball = 1} -> Ply1_de_stroke
-//			4: BH_InsideOut { ball = 3} -> Ply1_ad_stroke
-//			13: BH_DownMid_AD { ball = 2} -> Ply1_mid_stroke
-//			7: BH_Error_AD { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }};
-//      		 
-//Ply2_ForeHandR = ifa (turn == f_de_ct) {    // Player2 forehand return to Player1 serve from the deuce court side
-//			pcase {
-//			3: FH_InsideOut { ball = 1} -> Ply1_de_stroke
-//			3: FH_CrossCourt_DE { ball = 3} -> Ply1_ad_stroke
-//			0: FH_InsideIn {ball = 3} -> Ply1_ad_stroke
-//			8: FH_DownMid_DE { ball = 2} -> Ply1_mid_stroke
-//			10: FH_Error_DE { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }}
-//      		 else {
-//      		pcase {
-//			17: FH_CrossCourt_AD { ball = 3} -> Ply1_ad_stroke
-//			3: FH_DownLine { ball = 1} -> Ply1_de_stroke
-//			10: FH_DownMid_AD { ball = 2} -> Ply1_mid_stroke
-//			9: FH_Error_AD { ball = 9} -> {fscore++; if (fscore == 7) {won = player1} 
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt			
-//      		 }};
-//      		 
-//Ply1_BackHandR = ifa (turn == n_de_ct) {    // Player2 backhand return to Player1 serve from the deuce court side
-//		 pcase {
-//			5: BH_CrossCourt_DE {ball = 4} -> Ply2_ad_stroke
-//			1: BH_InsideIn {ball = 4} -> Ply2_ad_stroke
-//			12: BH_InsideOut { ball = 6} -> Ply2_de_stroke
-//			18: BH_DownMid_DE { ball = 5} -> Ply2_mid_stroke
-//			4: BH_Error_DE { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }}
-//      		 else {
-//      		pcase {
-//			14: BH_CrossCourt_AD { ball = 4} -> Ply2_ad_stroke
-//			7: BH_DownLine { ball = 6} -> Ply2_de_stroke
-//			17: BH_DownMid_AD { ball = 5 } -> Ply2_mid_stroke
-//			14: BH_Error_AD{ball=9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }};
-//
-//Ply1_ForeHandR = ifa (turn == n_de_ct) {    // Player2 forehand return to Player1 serve from the deuce court side
-//		 pcase {
-//			11: FH_CrossCourt_DE { ball = 6;} -> Ply2_de_stroke
-//			1: FH_DownLine { ball = 4} -> Ply2_ad_stroke
-//			12: FH_DownMid_DE { ball = 5} -> Ply2_mid_stroke
-//			11: FH_Error_DE { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }}
-//      		 else {
-//      		pcase {
-//			0: FH_InsideOut { ball = 4} -> Ply2_ad_stroke
-//			2: FH_CrossCourt_AD {ball = 6} -> Ply2_de_stroke
-//			2: FH_InsideIn { ball = 6} -> Ply2_de_stroke
-//			12: FH_DownMid_AD { ball = 5} -> Ply2_mid_stroke
-//			5: FH_Error_AD { ball = 9} -> {nscore++; if (nscore == 7) {won = player2}
-//      		                                                     else { turn = (turn+1)%4} }-> NextPt
-//      		 }};
