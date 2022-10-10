@@ -377,9 +377,9 @@ We have the following 20 pcases:
 ('Backhand', '7') 0
 ('Backhand', '8') 0
 ('Backhand', '9') 0
-('Forehand', '5') 1
+('Forehand', '5') 0
 ('Forehand', '6') 0
-('Forehand', '7') 12
+('Forehand', '7') 13
 ('Forehand', '8') 0
 ('Forehand', '9') 7
 For state: ('Serve Return', 'K', '8')
