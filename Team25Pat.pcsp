@@ -87,7 +87,7 @@ S_SecondServeFrom8 = pcase {
 KS_ServeReturnFrom7 = pcase {                              
 			0: KServeReturn -> K_ServeReturnFrom7
 			34: SServeReturn -> S_ServeReturnFrom7
-			7: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			8: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == 7) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_ServeReturnFrom8 = pcase {                              
