@@ -23,9 +23,9 @@ var won = na;
 var ball = 9;
 var winningScore = 7;
 
-TieBreakGame = WhoServe1st; (MTServe [] KSServe);
+TieBreakGame = FirstServe; (MTServe [] KSServe);
 
-WhoServe1st = []i:{KServe, SServe, MServe, TServe}@ TossCoin{turn = i} -> Skip;
+FirstServe = []i:{KServe, SServe, MServe, TServe}@ TossCoin{turn = i} -> Skip;
 
 // KS - First and Second Serves
 KSServe = [won == na && turn == KServe] KTurnToServe -> K_FirstServe [] [won == na && turn == SServe] STurnToServe -> S_FirstServe;
