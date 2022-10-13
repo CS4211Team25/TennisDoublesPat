@@ -88,13 +88,13 @@ S_SecondServeFrom8 = pcase {
 KS_ServeReturnFrom7 = pcase {                              
 			0: KServeReturn -> K_ServeReturnFrom7
 			34: SServeReturn -> S_ServeReturnFrom7
-			6: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == winningScore) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			2: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == winningScore) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };
 
 KS_ServeReturnFrom8 = pcase {                              
 			34: KServeReturn -> K_ServeReturnFrom8
 			0: SServeReturn -> S_ServeReturnFrom8
-			12: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == winningScore) {won = MT} else { turn = (turn+1)%4} } -> NextPt
+			0: FailToReturn{ball = 9} -> MTWinPoint{MTscore++; if (MTscore == winningScore) {won = MT} else { turn = (turn+1)%4} } -> NextPt
 };		
 
 // No data on case K Serve Return from 7
@@ -365,13 +365,13 @@ T_SecondServeFrom2 = pcase {
 MT_ServeReturnFrom1 = pcase {                              
 			0: MServeReturn -> M_ServeReturnFrom1
 			38: TServeReturn -> T_ServeReturnFrom1
-			7: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == winningScore) {won = KS} else { turn = (turn+1)%4} } -> NextPt
+			0: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == winningScore) {won = KS} else { turn = (turn+1)%4} } -> NextPt
 };
 
 MT_ServeReturnFrom2 = pcase {                              
 			40: MServeReturn -> M_ServeReturnFrom2
 			0: TServeReturn -> T_ServeReturnFrom2
-			4: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == winningScore) {won = KS} else { turn = (turn+1)%4} } -> NextPt
+			1: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if (KSscore == winningScore) {won = KS} else { turn = (turn+1)%4} } -> NextPt
 };
 
 M_ServeReturnFrom1 = pcase {                              
