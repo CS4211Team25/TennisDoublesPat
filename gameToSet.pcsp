@@ -1,0 +1,68 @@
+﻿enum{MT, KS, na};
+enum{KServe, MServe, SServe, TServe};
+enum{useLow, useHigh};
+
+var KWinLowProb = 20;
+var KWinHighProb = 80;
+
+var SWinLowProb = 40;
+var SWinHighProb = 60;
+
+var MWinLowProb = 40;
+var MWinHighProb = 60;
+
+var TWinLowProb = 40;
+var TWinHighProb = 60;
+
+var probToUse = useLow;
+var turn = 0;
+var gamesToWin = 6;
+var MTGamesWon = 0;
+var KSGamesWon = 0;
+
+var won = na;
+
+SetWithLowProb = UseLowProb; FirstServe; NextGame;
+SetWithHighProb = UseHighProb; FirstServe; NextGame;
+
+UseLowProb = SetProbToLow{probToUse = useLow} -> Skip;
+UseHighProb = SetProbToHigh{probToUse = useHigh} -> Skip;
+
+FirstServe = []i:{KServe, TServe, SServe, MServe}@ TossCoin{turn = i} -> Skip;
+
+NextGame = KServeGame [] SServeGame [] MServeGame [] TServeGame [] ([won != na] GameOver -> Skip);
+
+KServeGame = [won == na && turn == KServe] K_Serve;
+SServeGame = [won == na && turn == SServe] S_Serve;
+
+MServeGame = [won == na && turn == MServe] M_Serve;
+TServeGame = [won == na && turn == TServe] T_Serve;
+
+K_Serve = pcase {
+	(probToUse * KWinHighProb) + ((1 - probToUse) * KWinLowProb): KSWins{KSGamesWon++} -> GoNext{if ((KSGamesWon == gamesToWin && KSGamesWon >= MTGamesWon + 2) || KSGamesWon == gamesToWin + 1) {won = KS} else {turn = (turn + 1) % 4}} -> NextGame
+	100 - ((probToUse * KWinHighProb) + ((1 - probToUse) * KWinLowProb)): MTWins{MTGamesWon++} -> GoNext{if ((MTGamesWon == gamesToWin && MTGamesWon >= KSGamesWon + 2) || MTGamesWon == gamesToWin + 1) {won = MT} else {turn = (turn + 1) % 4}} -> NextGame
+};
+
+S_Serve = pcase {
+	(probToUse * SWinHighProb) + ((1 - probToUse) * SWinLowProb): KSWins{KSGamesWon++} -> GoNext{if ((KSGamesWon == gamesToWin && KSGamesWon >= MTGamesWon + 2) || KSGamesWon == gamesToWin + 1) {won = KS} else {turn = (turn + 1) % 4}} -> NextGame
+	100 - ((probToUse * SWinHighProb) + ((1 - probToUse) * SWinLowProb)): MTWins{MTGamesWon++} -> GoNext{if ((MTGamesWon == gamesToWin && MTGamesWon >= KSGamesWon + 2) || MTGamesWon == gamesToWin + 1) {won = MT} else {turn = (turn + 1) % 4}} -> NextGame
+};
+
+M_Serve = pcase {
+	(probToUse * MWinHighProb) + ((1 - probToUse) * MWinLowProb): MTWins{MTGamesWon++} -> GoNext{if ((MTGamesWon == gamesToWin && MTGamesWon >= KSGamesWon + 2) || MTGamesWon == gamesToWin + 1) {won = MT} else {turn = (turn + 1) % 4}} -> NextGame
+	100 - ((probToUse * MWinHighProb) + ((1 - probToUse) * MWinLowProb)): KSWins{KSGamesWon++} -> GoNext{if ((KSGamesWon == gamesToWin && KSGamesWon >= MTGamesWon + 2) || KSGamesWon == gamesToWin + 1) {won = KS} else {turn = (turn + 1) % 4}} -> NextGame
+};
+
+T_Serve = pcase {
+	(probToUse * TWinHighProb) + ((1 - probToUse) * TWinLowProb): MTWins{MTGamesWon++} -> GoNext{if ((MTGamesWon == gamesToWin && MTGamesWon >= KSGamesWon + 2) || MTGamesWon == gamesToWin + 1) {won = MT} else {turn = (turn + 1) % 4}} -> NextGame
+	100 - ((probToUse * TWinHighProb) + ((1 - probToUse) * TWinLowProb)): KSWins{KSGamesWon++} -> GoNext{if ((KSGamesWon == gamesToWin && KSGamesWon >= MTGamesWon + 2) || KSGamesWon == gamesToWin + 1) {won = KS} else {turn = (turn + 1) % 4}} -> NextGame
+};
+
+
+#define KSWin won == KS;
+#define MTWin won == MT;
+
+#assert SetWithLowProb reaches KSWin with prob;
+#assert SetWithLowProb reaches MTWin with prob;
+#assert SetWithHighProb reaches KSWin with prob;
+#assert SetWithHighProb reaches MTWin with prob;
