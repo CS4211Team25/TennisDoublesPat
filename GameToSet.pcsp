@@ -28,7 +28,7 @@ SetWithHighProb = UseHighProb; FirstServe; NextGame;
 UseLowProb = SetProbToLow{probToUse = useLow} -> Skip;
 UseHighProb = SetProbToHigh{probToUse = useHigh} -> Skip;
 
-FirstServe = []i:{KServe, TServe, SServe, MServe}@ TossCoin{turn = i} -> Skip;
+FirstServe = []i:{SServe, TServe, KServe, MServe}@ TossCoin{turn = i} -> Skip;
 
 NextGame = KServeGame [] SServeGame [] MServeGame [] TServeGame [] ([won != na] GameOver -> Skip);
 
@@ -58,11 +58,7 @@ T_Serve = pcase {
 	10000 - ((probToUse * TWinHighProb) + ((1 - probToUse) * TWinLowProb)): KSWins{KSGamesWon++} -> GoNext{if ((KSGamesWon == gamesToWin && KSGamesWon >= MTGamesWon + 2) || KSGamesWon == gamesToWin + 1) {won = KS} else {turn = (turn + 1) % 4}} -> NextGame
 };
 
-
-#define KSWin won == KS;
 #define MTWin won == MT;
 
-#assert SetWithLowProb reaches KSWin with prob;
 #assert SetWithLowProb reaches MTWin with prob;
-#assert SetWithHighProb reaches KSWin with prob;
 #assert SetWithHighProb reaches MTWin with prob;
