@@ -542,12 +542,12 @@ T_NormalReturnFrom2 = pcase {
 };
 
 T_NormalReturnFrom3 = pcase {
-			2: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
+			0: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
 			6: BH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			1: BH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			6: BH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8
 			1: FH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
-			3: FH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
+			5: FH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			3: FH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			6: FH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8                         
 			5: BH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
@@ -584,3 +584,4 @@ NextPt = StartingServe [] ([won != na] GameOver -> Skip);
 #assert Game_MServing reaches MTWin with prob;
 #assert Game_TServing reaches KSWin with prob;
 #assert Game_TServing reaches MTWin with prob;
+
