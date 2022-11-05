@@ -438,9 +438,9 @@ MT_NormalReturnFrom2 = pcase {
 };
 
 MT_NormalReturnFrom3 = pcase {
-			20: MNormalReturn -> M_NormalReturnFrom3
+			22: MNormalReturn -> M_NormalReturnFrom3
 			24: TNormalReturn -> T_NormalReturnFrom3
-			16: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}     		                                                        
+			14: FailToReturn{ball = 9} -> KSWinPoint{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}     		                                                        
 																	}-> NextPt
 };
 
@@ -497,15 +497,15 @@ M_NormalReturnFrom3 = pcase {
 };	
 
 M_NormalReturnFrom4 = pcase {
-			4: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
-			2: BH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
+			5: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
+			3: BH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			9: BH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			7: BH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8
 			4: FH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
 			2: FH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			7: FH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			6: FH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8                         
-			7: BH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
+			5: BH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
 				-> NextPt
 			0: FH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
 				-> NextPt
@@ -542,17 +542,17 @@ T_NormalReturnFrom2 = pcase {
 };
 
 T_NormalReturnFrom3 = pcase {
-			0: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
-			4: BH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
+			2: BH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
+			6: BH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			1: BH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			6: BH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8
 			1: FH_NormalReturnToPosition5{ball = 5} -> KS_NormalReturnFrom5
 			3: FH_NormalReturnToPosition6{ball = 6} -> KS_NormalReturnFrom6
 			3: FH_NormalReturnToPosition7{ball = 7} -> KS_NormalReturnFrom7
 			6: FH_NormalReturnToPosition8{ball = 8} -> KS_NormalReturnFrom8                         
-			7: BH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
+			5: BH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
 				-> NextPt
-			6: FH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
+			4: FH_NormalReturn_Out{ball = 9} -> MTOut{KSscore++; if ((KSscore >= winningScore && KSscore >= (MTscore + pointLead)) || (KSscore == scoreCap)) {won = KS}}
 				-> NextPt
 };			
 		
