@@ -1,8 +1,19 @@
 ﻿enum{MT, KS, na};
 enum{useLow, useHigh};
 
-var KSWinLowProb = 3914;
-var KSWinHighProb = 4560;
+/*
+Without Improvements:
+*/
+
+//var MTWinLowProb = 1866;
+//var MTWinHighProb = 4575;
+
+/*
+With Improvements
+*/
+
+var MTWinLowProb = 3141;
+var MTWinHighProb = 5960;
 
 var probToUse = useLow;
 var setsToWin = 2;
@@ -21,15 +32,15 @@ NextSet = SetStart [] ([won != na] MatchOver -> Skip);
 SetStart = [won == na] SetStarted;
 
 SetStarted = pcase {
-	(probToUse * KSWinHighProb) + ((1 - probToUse) * KSWinLowProb) : KSWins{KSSetsWon++} -> goNext{
-		if (KSSetsWon == setsToWin) {
-			won = KS
+	(probToUse * MTWinHighProb) + ((1 - probToUse) * MTWinLowProb) : MTWins{MTSetsWon++} -> goNext{
+		if (MTSetsWon == setsToWin) {
+			won = MT
 		}
 	} -> NextSet
 	
-	10000 - ((probToUse * KSWinHighProb) + ((1 - probToUse) * KSWinLowProb)) : MTWins{MTSetsWon++} -> goNext{
-		if (MTSetsWon == setsToWin) {
-			won = MT
+	10000 - ((probToUse * MTWinHighProb) + ((1 - probToUse) * MTWinLowProb)) : KSWins{KSSetsWon++} -> goNext{
+		if (KSSetsWon == setsToWin) {
+			won = KS
 		} 
 	} -> NextSet
 };
